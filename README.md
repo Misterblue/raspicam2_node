@@ -10,20 +10,27 @@ There were some compile errors from the [base repository](https://github.com/chr
 
 ## Build Instructions
 
-I built this as part of the ROS2 sources which I built on the Raspberry Pi 3.
+This is built as a stand-alone package.
 So, presuming one followed [the instructions for building ROS2](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)
 with the usual defaults:
 
 ```bash
-cd ~/ros2_ws/src/ros2
+cd ~
+source /opt/ros2/setup.bash
 git clone https://github.com/Misterblue/raspicam2_node.git
-cd ../..
-sudo src/ament/ament_tools/scripts/ament.py build --install-space /opt/ros2 --only-package raspicam2
+cd raspicam2_node
+ament build .
 ```
 
 ## Running the Node
 
-Once built as above, the command to run it is `ros2 run raspicam2 raspicam2_node` .
+Once built as above, the commands to run are:
+
+```bash
+cd raspicam2_node
+source install/local_setup.bash
+ros2 run raspicam2 raspicam2_node
+```
 
 TODO: there are parameters so document them.
 
