@@ -28,7 +28,7 @@ Once built as above, the commands to run are:
 
 ```bash
 cd raspicam2_node
-source install/local_setup.bash
+source install/setup.bash
 ros2 run raspicam2 raspicam2_node
 ```
 
